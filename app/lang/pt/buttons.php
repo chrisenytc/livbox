@@ -1,0 +1,30 @@
+<?php
+
+return array(
+	'add'          => 'Adicionar',
+	'adduser'      => 'Criar Usuário',
+	'create'       => 'Criar',
+	'edit'         => 'Editar',
+	'delete'       => 'Deletar',
+	'remove'       => 'Remover',
+	'save'         => 'Salvar',
+	'send'         => 'Enviar',
+	'back'         => 'Voltar',
+	'resetsession' => 'Reiniciar Sessão',
+	'upload'       => 'Enviar Arquivo',
+	'newfolder'    => 'Nova Pasta',
+	'viewfolder'   => 'Entrar',
+	'download'     => 'Baixar',
+	'rename'       => 'Renomear',
+	'share'        => 'Publicar',
+	'unshare'      => 'Proteger',
+	'viewshare'    => 'Acessar Arquivo Compartilhado',
+	'sendtome'     => 'Enviar para mim',
+	'login'        => 'Entrar',
+	'logout'       => 'Sair',
+	'forgotpass'   => 'Recuperar Senha',
+	'return'       => 'Retornar',
+	'gotohome'     => 'Ir para a Página Inicial',
+	'online'       => 'ONLINE',
+	'offline'      => 'OFFLINE'
+);

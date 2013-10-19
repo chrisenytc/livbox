@@ -1,0 +1,56 @@
+#!/usr/bin/env php
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Task Runner
+|--------------------------------------------------------------------------
+|
+| Load All Commands to install LivBox
+|
+*/
+
+//AUTOLOADER
+require_once __DIR__ . '/vendor/autoload.php';
+//AUTOLOADER
+
+//USE
+use Commander\LivCommander;
+//USE
+
+//Create new instance of LivCommander
+$livia = new LivCommander();
+
+//Set AppName
+$livia->setAppName('LivBox');
+
+//Set MessagePath
+$livia->setMessagePath(__DIR__.'/src/messages/');
+
+//SetOption install
+
+$livia->setOption('install', 'Install LivBox', array(
+
+	array('name' => 'composer', 'command' => 'composer install'),
+	array('name' => 'npm', 'command'      => 'npm install'),
+	array('name' => 'bower', 'command'    => 'bower install'),
+	array('name' => 'artisan', 'command'  => 'php artisan grant:permission'),
+	array('name' => 'migrate', 'command'  => 'php artisan migrate'),
+	array('name' => 'seed', 'command'     => 'php artisan db:seed'),
+	array('name' => 'grunt', 'command'    => 'grunt')
+
+));
+
+//SetOption up
+
+$livia->setOption('up', 'Disable Maintenance Mode', array(
+	array('name' => 'up', 'command' => 'php artisan up')
+));
+
+//SetOption down
+$livia->setOption('down', 'Enable Maintenance Mode', array(
+	array('name' => 'down', 'command' => 'php artisan down')
+));
+
+//Start LivCommander
+$livia->bootstrap($argv);

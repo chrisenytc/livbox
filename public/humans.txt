@@ -1,0 +1,23 @@
+/* TEAM */
+
+LVPass: Christopher EnyTC.
+Site: http://chris.enytc.com
+Twitter: chrisenytc
+Location: New York, USA
+[...]
+
+
+
+/* THANKS */
+
+Name: LVPass
+[...]
+
+
+
+/* SITE */
+
+Last update: 2013/09/13
+Standards: HTML5, CSS3, JavaScript.
+Components: Modernizr, jQuery, AngularJS, Bootstrap.
+Software: Sublime Text 3, Grunt, Bower, Yeoman, LESS, CoffeeScript.

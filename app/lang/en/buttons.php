@@ -1,0 +1,30 @@
+<?php
+
+return array(
+	'add'          => 'Add',
+	'adduser'      => 'Create User',
+	'create'       => 'Create',
+	'edit'         => 'Edit',
+	'delete'       => 'Delete',
+	'remove'       => 'Remove',
+	'save'         => 'Save',
+	'send'         => 'Send',
+	'back'         => 'Back',
+	'resetsession' => 'Restart Session',
+	'upload'       => 'Send File',
+	'newfolder'    => 'New Folder',
+	'viewfolder'   => 'View Here',
+	'download'     => 'Download',
+	'rename'       => 'Rename',
+	'share'        => 'Share',
+	'unshare'      => 'Unshare',
+	'viewshare'    => 'Access Shared File',
+	'sendtome'     => 'Send To Me',
+	'login'        => 'Login',
+	'logout'       => 'Logout',
+	'forgotpass'   => 'Recover Password',
+	'return'       => 'Return',
+	'gotohome'     => 'Go To Home',
+	'online'       => 'ONLINE',
+	'offline'      => 'OFFLINE'
+);

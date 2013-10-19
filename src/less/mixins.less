@@ -1,0 +1,69 @@
+// Mixins
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.transition(@value: 0.5s) {
+  -webkit-transition: @value;
+  -moz-transition: @value;
+  -o-transition: @value;
+  transition: @value;
+}
+
+.transitionHover(@value: 0.5s, @opacity: 0.5) {
+  -webkit-transition: @value;
+  -moz-transition: @value;
+  -o-transition: @value;
+  transition: @value;
+  opacity: @opacity;
+}
+
+.border-radius(@value: 5px) {
+  -webkit-border-radius: @value;
+  -moz-border-radius: @value;
+  -o-border-radius: @value;
+  border-radius: @value;
+}
+
+.box-shadow(@horizontal: 0px, @vertical: 5px, @blur: 0px, @spread: 0px, @color: @secondaryColor) {
+  -webkit-box-shadow: @horizontal @vertical @blur @spread @color;
+  -moz-box-shadow: @horizontal @vertical @blur @spread @color;
+  -o-box-shadow: @horizontal @vertical @blur @spread @color;
+  box-shadow: @horizontal @vertical @blur @spread @color;
+}
+
+.text-shadow(@horizontal: 2px, @vertical: 2px, @color: @secondaryColor) {
+  -webkit-text-shadow: @horizontal @vertical @color;
+  -moz-text-shadow: @horizontal @vertical@color;
+  -o-text-shadow: @horizontal @vertical@color;
+  text-shadow: @horizontal @vertical @color;
+}
+
+.circle(@color: @primaryColor) {
+  padding: 10px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  background-color: transparent;
+  color: @color;
+  border: 3px solid @color;
+
+}
+
+.status(@color: #69b44a, @size: 2em) {
+  margin: 10px;
+  padding: 10px;
+  font-size: @size;
+  font-weight: bold;
+  text-align: center;
+  background: transparent;
+  border: 3px solid @color;
+  color: @color;
+  text-decoration: none;
+  .border-radius();
+  display: block;
+}
+
+.center() {
+  margin: 0 auto;
+  text-align: center;
+}

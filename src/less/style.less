@@ -1,0 +1,407 @@
+/*
+* LivBox - File System Manager
+*
+* Author: Christopher EnyTC <chrisenytc@gmail.com>
+* Author URL: chris.enytc.com
+* Version: 1.0.0
+*
+*/
+
+/*
+*
+* Groups Reference
+*
+* Variables
+* Mixins
+* Scrollbars
+* Default Styles
+* Typography
+* Addons
+* Header
+* Navigation
+* Login Box
+* Public Box
+* Page Content
+* Page Block
+* Footer
+* Media Queries
+*
+*/
+
+
+@import "variables.less";
+@import "mixins.less";
+
+// Scrollbars
+// *---------------------------------------------------------------------------------------------------------------* //
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-button {
+
+}
+::-webkit-scrollbar-track {
+  background: #cccccc;
+  border: skinny plain lightgray;
+  box-shadow: 0px 0px 3px #dfdfdf inset;
+}
+::-webkit-scrollbar-thumb {
+  background: #646464;
+  border: skinny plain gray;
+  border-radius:6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #646464;
+}
+
+// Default Styles
+// *---------------------------------------------------------------------------------------------------------------* //
+
+@font-face {
+  font-family: 'Gudea';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gudea'), url(http://themes.googleusercontent.com/static/fonts/gudea/v1/Z6xYy_2MlN1cUISkeodEPA.woff) format('woff');
+}
+
+body {
+  font-family: @baseFont, @secondaryFont, sans-serif;
+  font-size: @fontSize;
+  background-color: @backgroundColor;
+  color: @textColor;
+  overflow-x: hidden;
+  a {
+    color: @thirdColor;
+    &:hover {
+      color: darken(@thirdColor, 5%);
+      i.glyphicon {
+        color: darken(@thirdColor, 5%);
+      }
+    }
+    i.glyphicon {
+      color: @thirdColor;
+    }
+  }
+  a.btn {
+    i.glyphicon {
+      color: #ffffff;
+    }
+  }
+}
+
+// Typography
+// *---------------------------------------------------------------------------------------------------------------* //
+
+h1, h2, h3, h4, h5, h6 {
+  color: #cccccc;
+}
+
+// Addons
+// *---------------------------------------------------------------------------------------------------------------* //
+.btn-big {
+	margin: 20px;
+}
+
+.btn-transparent {
+	margin: 10px;
+    background: transparent;
+  	border: 3px solid @primaryColor;
+  	color: @primaryColor;
+  	text-decoration: none;
+  	.transition(0.4s);
+  &:active {
+  	background-color: darken(@primaryColor, 6%);
+  	.transition(0.4s);
+  }
+  &:hover {
+  	background-color: @primaryColor;
+    color: #ffffff;
+    .box-shadow();
+    .transition(0.4s);
+  }
+}
+
+.icon-large {
+  font-size: 2em;
+}
+
+.table-color {
+  thead {
+    tr {
+      color: #ffffff;
+      background-color: @primaryColor;
+    }
+  }
+  tbody {
+    tr {
+      color: #ffffff;
+      td {
+        background-color: lighten(@secondaryColor, 18%);
+      }
+      &:hover {
+        color: @textColor;
+        a, i {
+          text-decoration: none;
+          color: @primaryColor;
+        }
+        a.btn {
+          color: #ffffff;
+          i {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+// Header
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.header {
+
+    // Default Property
+    background-color: @secondaryColor;
+    .box-shadow(4px, 5px, 3px, 0px, darken(@secondaryColor, 6%));
+    .logo {
+      padding: 5px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: @secondaryColor;
+      .center();
+    }
+    .profile {
+      .center();
+      padding: 10px;
+      color: #ffffff;
+      background-color: darken(@secondaryColor, 5%);
+    }
+}
+
+// Navigation
+// *---------------------------------------------------------------------------------------------------------------* //
+.main-nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+      .center();
+      &:hover {
+        background-color: darken(@backgroundColor, 6%);
+      }
+      a {
+        text-decoration: none;
+      }
+      i {
+        margin-bottom: 5px;
+        font-size: 3em;
+        display: block;
+      }
+    }
+  }
+}
+
+//Login Box
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.login-box {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: @backgroundColor;
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 10px;
+  }
+  .form-signin .checkbox {
+    font-weight: normal;
+  }
+  .form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+// Public Box
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.public-box {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: @backgroundColor;
+  .file-info {
+    max-width: 350px;
+    padding: 6px;
+    margin: 0 auto;
+    .file-box {
+      color: @backgroundColor;
+      background-color: #ffffff;
+      word-wrap: break-word;
+      padding: 20px;
+      .border-radius();
+      .center();
+      margin-bottom: 20px;
+      .file-size {
+        margin: 20px;
+      }
+      p {
+        color: @primaryColor;
+        display: block;
+      }
+      i {
+        font-size: 8em;
+      }
+    }
+  }
+}
+
+// Page Content
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.page-content {
+  padding: 20px;
+  background-color: #ffffff;
+  word-wrap: break-word;
+}
+
+// Page Block
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.page-block {
+  a.btn {
+      margin: 5px;
+  }
+}
+
+// Errors
+// *---------------------------------------------------------------------------------------------------------------* //
+
+// NotFound Page Property
+.error-block {
+    .center();
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    max-width: 600px;
+    padding: 15px;
+    .border-radius();
+    .error {
+      text-align: center;
+      .icon-block {
+        i {font-size: 5em;display: block;}
+      }
+      span {font-size: 3em}
+      p {font-size: 2em}
+      a {
+        margin-top: 5px;
+      }
+    }
+  }
+
+// Footer
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.footer {
+  .p {
+    padding: 20px;
+    font-family: @secondaryFont, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #646464;
+  }
+}
+
+// Media Queries
+// *---------------------------------------------------------------------------------------------------------------* //
+
+@media (max-width: 259px) {
+ .header {
+    .logo {
+        font-size: 45px;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  body {
+  	margin: 0 auto;
+    text-align: center;
+    .page-block {
+      table {
+          table-layout: fixed;
+          word-wrap: break-word;
+        thead {
+          th {
+            display: block !important;
+            text-align: center;
+          }
+          &:after {
+              color: #ffffff;
+              content: '<br />';
+          }
+        }
+        tbody {
+          tr {
+            &:after {
+              color: #ffffff;
+              content: '<br />';
+            }
+            td {
+              display: block;
+              text-align: center;
+              a.btn {
+                margin: 5px;
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    width: 170px;
+    height: 100%;
+    position: fixed;
+  }
+  .page-content {
+    width: 97%;
+    height: auto;
+    position: absolute;
+  }
+}
