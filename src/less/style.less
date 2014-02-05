@@ -1,0 +1,330 @@
+/*
+* LivBox - File System Manager
+*
+* Author: Christopher EnyTC <chrisenytc@gmail.com>
+* Author URL: chris.enytc.com
+* Version: 0.1.0
+*
+*/
+
+/*
+*
+* Groups Reference
+*
+* Variables
+* Mixins
+* Scrollbars
+* Default Styles
+* Typography
+* Addons
+* Header
+* Navigation
+* Page Content
+* Contributors
+* Features
+* Errors
+* Footer
+* Media Queries
+*
+*/
+
+
+@import "variables.less";
+@import "mixins.less";
+
+// Scrollbars
+// *---------------------------------------------------------------------------------------------------------------* //
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-button {
+
+}
+::-webkit-scrollbar-track {
+  background: #cccccc;
+  border: skinny plain lightgray;
+  box-shadow: 0px 0px 3px #dfdfdf inset;
+}
+::-webkit-scrollbar-thumb {
+  background: #646464;
+  border: skinny plain gray;
+  border-radius:6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #646464;
+}
+
+// Default Styles
+// *---------------------------------------------------------------------------------------------------------------* //
+
+@font-face {
+  font-family: 'Gudea';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gudea'), url(http://themes.googleusercontent.com/static/fonts/gudea/v1/Z6xYy_2MlN1cUISkeodEPA.woff) format('woff');
+}
+
+body {
+  font-family: @baseFont, @secondaryFont, sans-serif;
+  font-size: @fontSize;
+  background-color: @backgroundColor;
+  color: @textColor;
+  overflow-x: hidden;
+}
+
+// Typography
+// *---------------------------------------------------------------------------------------------------------------* //
+
+h1, h2, h3, h4, h5, h6 {
+  color: #cccccc;
+}
+
+// Addons
+// *---------------------------------------------------------------------------------------------------------------* //
+.btn-big {
+	margin: 20px;
+}
+
+.btn-transparent {
+	margin: 10px;
+    background: transparent;
+  	border: 3px solid @primaryColor;
+  	color: @primaryColor;
+  	text-decoration: none;
+  	.transition(0.4s);
+  &:active {
+  	background-color: darken(@primaryColor, 6%);
+  	.transition(0.4s);
+  }
+  &:hover {
+  	background-color: @primaryColor;
+    color: #ffffff;
+    .box-shadow();
+    .transition(0.4s);
+  }
+}
+
+.responsive-img {
+	margin: 0 auto;
+  text-align: center;
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+}
+
+.profile-img {
+	.img-feature();
+}
+
+.clear {
+  clear: both;
+}
+
+// Header
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.header {
+    // Default Property
+    background-color: @secondaryColor;
+    .logo {
+      color: #ffffff;
+      font-size: 50px;
+      font-weight: bold;
+      background-color: darken(@secondaryColor, 5%);
+      .center();
+    }
+}
+
+// Navigation
+// *---------------------------------------------------------------------------------------------------------------* //
+.main-nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      padding: 10px;
+      &:hover {
+        background-color: darken(@secondaryColor, 8%);
+      }
+      a {
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+    li.active {
+       background-color: @backgroundColor;
+      a {
+        color: @secondaryColor;
+      }
+    }
+  }
+}
+
+// Page Content
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.page-content {
+  padding: 20px;
+  background-color: #ffffff;
+  word-wrap: break-word;
+}
+
+// Contributors
+// *---------------------------------------------------------------------------------------------------------------* //
+
+
+.contributors {
+	.repo {
+		.repo-container {
+			margin-right: 5px;
+			margin-bottom: 5px;
+			height: 250px;
+			text-align: center;
+			background-color: lighten(@secondaryColor, 4%);
+			color: #ffffff;
+			.border-radius();
+			.repo-header {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				span {
+					font-size: 18px;
+				}
+			}
+			.repo-info {
+				margin: 10px;
+				a {
+					margin: 20px;
+				}
+			}
+		}
+	}
+}
+
+// Features
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.features {
+	.list {
+		.item {
+			.item-header {
+				h2 {
+					color: @primaryColor;
+				}
+			}
+			.item-content {
+				.item-slide {
+						margin-bottom: 15px;
+					img {
+						.img-feature();
+					}
+	
+				}
+				.item-resume {
+					.item-info {
+						div, span {
+							margin-top: 5px;
+							margin-bottom: 5px;
+							display: block;
+							b {
+								color: @primaryColor;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Errors
+// *---------------------------------------------------------------------------------------------------------------* //
+
+// NotFound Page Property
+.error-block {
+    .center();
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    max-width: 600px;
+    padding: 15px;
+    .border-radius();
+    .error {
+      text-align: center;
+      .icon-block {
+        i {font-size: 5em;display: block;}
+      }
+      span {font-size: 3em}
+      p {font-size: 2em}
+      a {
+        margin-top: 5px;
+      }
+    }
+  }
+
+// Footer
+// *---------------------------------------------------------------------------------------------------------------* //
+
+.footer {
+  .p {
+    padding: 20px;
+    font-family: @secondaryFont, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: #646464;
+  }
+}
+
+// Media Queries
+// *---------------------------------------------------------------------------------------------------------------* //
+
+@media (max-width: 259px) {
+ .header {
+   	.logo {
+        font-size: 45px;
+    }
+  }
+}
+
+@media (max-width: 242px) {
+  .logo {
+    img {
+      width: 162px;
+      height: 162px;
+    }
+  }
+  .repo {
+    width: 170px;
+    float: none;
+  }
+  .btn-big {
+		font-size: 3em;
+	}
+}
+
+@media (min-width: 768px) {
+  .repo {
+    width: 220px;
+    float: left;
+  }
+}
+
+@media (max-width: 1025px) {
+  body {
+  	.center();
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    width: 350px;
+    height: 100%;
+    position: fixed;
+  }
+	.responsive-img {
+		max-height: 550px;
+		max-width: 450px;
+	}
+}

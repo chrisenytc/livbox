@@ -1,0 +1,112 @@
+---
+layout: default
+title: Installation Guide
+---
+
+<div class="installation">
+  <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Install on Linux and Mac
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <ol>
+          <li>
+            Check if you have a cURL installed on your system.
+          </li>
+          <li>
+            <p>Download from .zip</p>
+            <a class="btn btn-transparent" href="https://github.com/enytc/livbox/zipball/master">Download LivBox</a>
+          </li>
+          <li>
+            <p>or Download From GitHub</p>
+            <code>
+              git clone https://github.com/enytc/livbox.git
+            </code>
+          </li>
+          <li>
+            <p>Configure Database</p>
+            <code>
+              cd livbox
+            </code>
+            <p>Open file <code>app/config/database.php</code> and edit database options: hostname, user and password.</p>
+          </li>
+          <li>
+            <p>Create a VHost in <code>/path/to/apache/sites-available/</code>. In this example we'll use Apache.</p>
+            <pre>
+&lt;VirtualHost *:80&gt;
+  ServerAdmin webmaster@localhost
+  ServerName livbox.dev
+  ServerAlias www.livbox.dev
+
+  DocumentRoot /path/to/livbox/public
+
+  &lt;Directory /path/to/livbox/public&gt;
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+            </pre>
+          </li>
+          <li>
+            <p>Run LivBox Installer</p>
+            <code>php livbox install</code>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Install on Windows
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <ol>
+          <li>
+            <p>Composer Required: <a href="http://getcomposer.org/doc/00-intro.md#installation-windows">How to Install Composer on Windows</a></p>
+          </li>
+          <li>
+            <p>Download From .zip</p>
+            <a class="btn btn-transparent" href="https://github.com/enytc/livbox/zipball/master">Download LivBox</a>
+          </li>
+          <li>
+            <p>Create a VHost in <code>/path/to/apache/sites-available/</code>. In this example we'll use Apache.</p>
+            <pre>
+&lt;VirtualHost *:80&gt;
+  ServerAdmin webmaster@localhost
+  ServerName livbox.dev
+  ServerAlias www.livbox.dev
+
+  DocumentRoot /path/to/livbox/public
+
+  &lt;Directory /path/to/livbox/public&gt;
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+            </pre>
+          </li>
+          <li>
+            <p>Run LivBox Installer</p>
+            <code>php livbox install</code>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

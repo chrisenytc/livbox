@@ -1,0 +1,11 @@
+{
+	"name": "livbox",
+	"version": "0.1.0",
+	"dependencies": {
+		"bootstrap": "~3.0.0",
+		"jquery": "~1.9.1",
+		"angular": "~1.0.8",
+		"html5shiv": "~3.6.2"
+	},
+	"devDependencies": {}
+}

@@ -1,0 +1,110 @@
+---
+layout: default
+title: Contributing
+---
+
+<div class="contributing">
+  <p>There are a number of LivBox projects.</p>
+  <ul>
+    <li>
+      <a href="https://github.com/enytc/livbox">LivBox</a>- the main LivBox project</li>
+    <li>
+      <a href="https://github.com/chrisenytc/livcommander">LivCommander</a>- the command-line framework and task manager</li>
+    <li>
+      <a href="https://github.com/enytc/livbox">livbox.github.io.com</a>- the livbox.github.io.com website</li>
+  </ul>
+  <h2>Filing issues</h2>
+  <hr/>
+  <p>
+    If you have a question not covered in the documentation or want to report a bug, the best way to ensure it gets addressed is to file it in the appropriate issues tracker.
+  </p>
+  <ul>
+    <li>
+      If there's an issue with the
+      <a href="http://livbox.github.io"></a>
+      <ul>
+        <li>Please file an issue on the
+          <a href="https://github.com/enytc/livbox/issues">livbox.github.io website issues tracker.</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      If there's an issue that isn't specific to any of the above
+      <ul>
+        <li>Please file an issue on the
+          <a href="https://github.com/enytc/livbox/issues">livbox issues tracker</a>and let us know why you're filing it there.</li>
+      </ul>
+    </li>
+  </ul>
+  <h4>Simplify the issue</h4>
+  <p>Try to
+    <a href="http://www.webkit.org/quality/reduction.html">reduce your code</a>to the bare minimum required to reproduce the issue. This makes it much easier (and much faster) to isolate and fix the issue.</p>
+  <h4>Explain the issue</h4>
+  <p>If we can't reproduce the issue, we can't fix it. Please list the exact steps required to reproduce the issue. Include versions of your OS, Node.js, livbox, etc. Include relevant logs or sample code.</p>
+  <h2>Discurssing</h2>
+  <hr />
+  <p>
+    Join the
+    <a href="http://freenode.net/">freenone</a>IRC #livbox channel. We've got a bot and everything.
+    <small>
+      <i>No private messages, please.</i>
+    </small>
+  </p>
+  <h2>Modify LivBox</h2>
+  <hr />
+  <p>First, ensure that you have the latest
+    <a href="http://nodejs.org/">Node.js</a>and
+    <a href="http://npmjs.org/">npm</a>installed.</p>
+  <ol>
+    <li>Ensure livbox is installed (see the
+      <a href="/getting-started/">Getting started</a>guide for more information)</li>
+    <li>Fork and clone the repo.</li>
+    <li>Check out the master branch (most livbox/livcommander development happens there).</li>
+    <li>Run
+      <code>npm install && bower install</code>to install all LivBox dependencies.</li>
+    <li>Run
+      <code>php livbox start</code>to start livbox.</li>
+  </ol>
+  <p>Assuming that you don&#39;t see any red, you&#39;re ready to go.</p>
+  <h2>Submitting Pull Request</h2>
+  <hr />
+  <ol>
+    <li>Create a new branch, please don&#39;t work in
+      <code>master</code>directly.</li>
+    <li>Add failing tests for the change you want to make. Run
+      <code>grunt</code>to see the tests fail.</li>
+    <li>Fix stuff.</li>
+    <li>Run
+      <code>grunt</code>to see if the tests pass. Repeat steps 2-4 until done.</li>
+    <li>Update the documentation to reflect any changes.</li>
+    <li>Push to your fork and submit a pull request.</li>
+  </ol>
+  <h2>Syntax</h2>
+  <hr />
+  <ul>
+    <li>Two space indents. Don&#39;t use tabs anywhere. Use
+      <code>\t</code>if you need a tab character in a string.</li>
+    <li>No trailing whitespace, except in markdown files where a linebreak must be forced.</li>
+    <li>Don&#39;t go overboard with the whitespace.</li>
+    <li>No more than
+      <a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/">one assignment</a>per
+      <code>var</code>statement.</li>
+    <li>Delimit strings with single-quotes
+      <code>&#39;</code>, not double-quotes
+      <code>&quot;</code>.</li>
+    <li>Prefer
+      <code>if</code>and
+      <code>else</code>to
+      <a href="http://programmers.stackexchange.com/a/25281">&quot;clever&quot;</a>uses of
+      <code>? :</code>conditional or
+      <code>||</code>,
+      <code>&amp;&amp;</code>logical operators.</li>
+    <li>Comments are great. Just put them
+      <em>before</em>the line of code,
+      <em>not</em>at the
+      <em>end</em>of the line.</li>
+    <li>
+      <strong>When in doubt, follow the conventions you see used in the source already.</strong>
+    </li>
+  </ul>
+</div>

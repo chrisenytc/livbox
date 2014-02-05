@@ -1,0 +1,22 @@
+<div class="contributors">
+	<div class="text-center" data-ng-hide="status">
+		<h1>
+			<span class="label label-success">Loadding Contributors...</span>
+		</h1>
+	</div>
+	<div class="repo" data-ng-repeat="c in contributors">
+		<div class="repo-container">
+			<header class="repo-header">
+				<span>{{ c.login }}</span>
+				<img class="profile-img" data-ng-src="{{ c.avatar_url }}" alt="{{ c.login }}">
+			</header>
+			<div class="repo-info">
+				<span class="label label-primary">
+					{{ c.contributions }} Contributions
+				</span>
+			</div>
+			<a class="btn btn-transparent btn-large" href="{{ c.html_url }}" target="_blank">View Profile</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
